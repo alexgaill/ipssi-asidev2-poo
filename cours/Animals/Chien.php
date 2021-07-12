@@ -1,4 +1,5 @@
 <?php
+namespace cours\Animals;
 // require_once "Mammifere.php";
 
 class Chien extends Mammifere{
