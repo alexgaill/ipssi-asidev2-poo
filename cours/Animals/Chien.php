@@ -1,33 +1,20 @@
 <?php
+// require_once "Mammifere.php";
 
-class Chien {
+class Chien extends Mammifere{
 
-    public $nom;
-    public $pelage;
-    public $age;
-    public $race;
-    public $cri = "aboiement";
+    protected $cri = "aboiement";
 
-    /**
-     * Le constructeur est une méthode qui s'appelle à l'instanciation d'une class.
-     * Elle demande à recevoir des paramètres obtenus lors de cette instanciation.
-     * Elle permet ainsi de donner des valeurs à toutes les propriétés que va contenir notre objet.
-     *
-     * @param string $nom
-     * @param string $pelage
-     * @param integer $age
-     * @param string $race
-     */
-    function __construct (string $nom, string $pelage, int $age, string $race)
+    public static $surnom = "Toto";
+
+    public function getCat ()
     {
-        $this->nom = $nom;
-        $this->pelage = $pelage;
-        $this->age = $age;
-        $this->race = $race;
+        // On accède à la constante du parent en y faisant référence grâce au mot-clé "parent"
+        return parent::CATEGORIE;
     }
-    
-    function setNom($nom)
+
+    public static function cours()
     {
-        $this->nom = $nom;
+        return self::$surnom . " se met à courir";
     }
 }
