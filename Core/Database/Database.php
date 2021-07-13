@@ -44,9 +44,9 @@ class Database {
         return $this->pdo;
     }
 
-    public function getData (string $statement, $one = false)
+    public function getData (string $statement, $classe, $one = false)
     {
-        $query = $this->pdo->query($statement, \PDO::FETCH_OBJ);
+        $query = $this->pdo->query($statement, \PDO::FETCH_CLASS, "App\Entity\\". $classe);
 
         $data = "";
         if ($one) {
@@ -58,7 +58,7 @@ class Database {
         return $data;
     }
 
-    public function prepare (string $statement, array $data)
+    public function prepare (string $statement, array $data= array())
     {
         try {
             $prepare = $this->pdo->prepare($statement);

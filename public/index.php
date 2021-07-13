@@ -1,6 +1,6 @@
 <?php
 
-use App\Categorie;
+use App\Manager\CategorieManager;
 use Cours\Revisions\GlobalPage;
 
 define("ROOT", dirname(__DIR__). "/");
@@ -9,11 +9,12 @@ require ROOT. "vendor/autoload.php";
 // require ROOT. "Core/Autoload/Autoloader.php";
 // Autoloader::register();
 
-$categorie = new Categorie();
+$categorie = new CategorieManager();
 $globalPage = new GlobalPage;
 
 // $categorie->saveCategorie();
 
 echo $globalPage->header();
-echo $globalPage->main($categorie->getCategorie(40));
+echo $globalPage->main($categorie->getCategories());
 echo $globalPage->footer();
+
