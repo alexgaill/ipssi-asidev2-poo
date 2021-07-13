@@ -1,5 +1,5 @@
 <?php
-namespace cours\Animals;
+namespace Cours\Animals;
 
 class Mammifere {
     /**

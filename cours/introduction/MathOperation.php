@@ -1,5 +1,6 @@
 <?php 
-namespace cours\Introduction;
+ namespace Cours\Introduction;
+
 /**
  * Une class a toujours sa première lettre en majuscule
  * Le fichier qui contient la class a le même nom que la class

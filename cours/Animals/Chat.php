@@ -1,5 +1,6 @@
 <?php
-// require_once "Mammifere.php";
+namespace Cours\Animals;
+
 class Chat extends Mammifere{
 
     protected $cri = "miaulement";

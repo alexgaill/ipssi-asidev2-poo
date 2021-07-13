@@ -1,5 +1,5 @@
 <?php
-
+ namespace Cours\Introduction;
 /**
  * Une class correspond au schema d'un objet
  */
