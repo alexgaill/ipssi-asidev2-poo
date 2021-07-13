@@ -1,13 +1,19 @@
 <?php
 
+use App\Categorie;
+use Cours\Revisions\GlobalPage;
+
 define("ROOT", dirname(__DIR__). "/");
 require ROOT. "vendor/autoload.php";
-use Cours\Animals\Chien;
-
 
 // require ROOT. "Core/Autoload/Autoloader.php";
 // Autoloader::register();
 
-$chien = new Chien("Rex", "gris", 3, "aze");
+$categorie = new Categorie();
+$globalPage = new GlobalPage;
 
-var_dump($chien);
+// $categorie->saveCategorie();
+
+echo $globalPage->header();
+echo $globalPage->main($categorie->getCategorie(40));
+echo $globalPage->footer();

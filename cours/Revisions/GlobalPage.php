@@ -1,4 +1,5 @@
 <?php
+namespace Cours\Revisions;
 
 class GlobalPage {
 

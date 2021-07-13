@@ -1,4 +1,5 @@
 <?php
+namespace Cours\Revisions;
 
 class Page extends GlobalPage{
 
@@ -8,7 +9,7 @@ class Page extends GlobalPage{
 
     public function hello ()
     {
-        $date = new DateTime();
+        $date = new \DateTime();
         $formatDate = $date->format("d m Y");
         $formatTime = $date->format("H:i:s");
 
