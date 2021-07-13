@@ -2,7 +2,7 @@
 
 class Autoload{
 
-    public static function autoload($classe)
+    public static function autoloader($classe)
     {
         $classe = str_replace("\\", "/", $classe);
         require "$classe.php";
@@ -10,6 +10,6 @@ class Autoload{
 
     public static function register()
     {
-        spl_autoload_register(['autoload', __CLASS__]);
+        spl_autoload_register(['autoloader', __CLASS__]);
     }
 }
