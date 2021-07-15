@@ -4,7 +4,7 @@ namespace Core\Entity;
 class DefaultEntity {
 
 
-    public function __construct($data)
+    public function __construct(array $data = [])
     {
         $this->hydrate($data);
     }

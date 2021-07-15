@@ -16,31 +16,22 @@ class ArticleManager {
     public function getArticles ()
     {
         $statement = "SELECT * FROM article";
-        $result = $this->db->getData($statement, $this->classe);
+        $articles = $this->db->getData($statement, $this->classe);
 
-        $content = "<ul>";
-        foreach ($result as $value) {
-            $content .= "<li><a href='$value->id'>$value->name</a></li>";
-        }
-        $content .= "</ul>";
-
-        return $content;
+        include ROOT."templates/article/index.php";
     }
 
     public function getArticle(int $id)
     {
         $statement = "SELECT * FROM article WHERE id = $id";
-
-        $result = $this->db->getData($statement, $this->classe, true);
-        if (!$result) {
+        
+        $article = $this->db->getData($statement, $this->classe, true);
+        if (!$article) {
             $e = new \Exception("Une erreur s'est produite lors de la récupération des données");
             return $e->getMessage();
         } else {
-            $content = "<ul>";
-            $content .= "<li><a href='$result->id'>$result->name</a></li>";
-            $content .= "</ul>";
-            
-            return $content;
+           
+            include ROOT. "templates/article/single.php";
         }
     }
 
