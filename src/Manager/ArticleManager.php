@@ -1,6 +1,7 @@
 <?php
 namespace App\Manager;
 
+use App\Entity\Article;
 use Core\Database\Database;
 
 class ArticleManager {
@@ -48,13 +49,23 @@ class ArticleManager {
         $post = [
             "title" => "Lorem Ipseum Dolor Sit Amet",
             "content" => "Lorem Ipseum Dolor Sit Amet Consecitur Lorem Ipseum Dolor Sit Amet",
-            "categorie_id" => 35,
-            "user_id" => 2
+            "categorieId" => 35,
+            "userId" => 2
         ];
 
-        $statement = "INSERT INTO article (title, content, categorie_id, user_id) VALUES (:title, :content, :categorie_id, :user_id)";
+        $article = new Article($post);
+        var_dump($article);
 
-        $this->db->prepare($statement, $post);
+        $statement = "INSERT INTO article (title, content, categorie_id, user_id, picture) VALUES (:title, :content, :categorie_id, :user_id, :picture)";
+
+        $prep = $this->db->getPDO()->prepare($statement);
+        $prep->bindValue(':title', $article->getTitle());
+        $prep->bindValue(':content', $article->getContent());
+        $prep->bindValue(':categorie_id', $article->getCategorieId());
+        $prep->bindValue(':user_id', $article->getUserId());
+        $prep->bindValue(':picture', $article->getPicture());
+
+        $prep->execute();
     }
 
     public function updateArticle (int $id)

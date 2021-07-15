@@ -1,5 +1,6 @@
 <?php
 
+use App\Manager\ArticleManager;
 use App\Manager\CategorieManager;
 use Cours\Revisions\GlobalPage;
 
@@ -14,7 +15,10 @@ $globalPage = new GlobalPage;
 
 // $categorie->saveCategorie();
 
-echo $globalPage->header();
-echo $globalPage->main($categorie->getCategories());
-echo $globalPage->footer();
+// echo $globalPage->header();
+// echo $globalPage->main($categorie->getCategories());
+// echo $globalPage->footer();
+
+$article = new ArticleManager();
+$article->saveArticle();
 

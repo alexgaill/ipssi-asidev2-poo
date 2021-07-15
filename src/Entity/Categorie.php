@@ -1,7 +1,9 @@
 <?php
 namespace App\Entity;
 
-class Categorie {
+use Core\Entity\DefaultEntity;
+
+class Categorie extends DefaultEntity{
 
     /**
      * @var int
@@ -13,7 +15,6 @@ class Categorie {
      */
     private $name;
     
-
     /**
      * Get the value of id
      */
