@@ -3,15 +3,19 @@
 
 use Cours\Magique;
 use App\Manager\ArticleManager;
+use App\Manager\CategorieManager;
 use Cours\CloneWars;
 
 if (!empty($_GET) && isset($_GET["method"])) {
     if ($_GET["method"] === "getArticles") {
         $manager = new ArticleManager;
-        $manager->getArticles();
+        $manager->getAll();
     } else if ($_GET["method"] === "getArticle" && isset($_GET["id"])) {
         $manager = new ArticleManager;
-        $manager->getArticle($_GET["id"]);
+        $manager->get($_GET["id"]);
+    } else if ($_GET["method"] === "getCategorie" && isset($_GET["id"])) {
+        $manager = new CategorieManager;
+        $manager->get($_GET["id"]);
     } else if ($_GET["method"] === "magique") {
         $classe = new Magique;
         $classe->propAjoutee  = "coucou";

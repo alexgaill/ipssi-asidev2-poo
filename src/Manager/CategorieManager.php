@@ -1,12 +1,19 @@
 <?php
 namespace App\Manager;
 
+use App\Service\ChangeText;
+use App\Service\MEPText;
 use Core\Database\Database;
+use Core\Manager\DefaultManager;
 
 /**
  * Class Categorie reprenant tout le CRUD des catégories (Create, Read, Update, Delete)
  */
-class CategorieManager {
+class CategorieManager extends DefaultManager{
+
+    use MEPText, ChangeText {
+        ChangeText::upper insteadOf MEPText;
+    }
 
     private $classe = "Categorie";
 
@@ -20,7 +27,7 @@ class CategorieManager {
      *
      * @return string
      */
-    public function getCategories ()
+    public function getAll ()
     {
         $result = $this->db->getData("SELECT * FROM categorie", $this->classe);
         // var_dump($result);
@@ -39,7 +46,7 @@ class CategorieManager {
      * @param integer $id
      * @return string
      */
-    public function getCategorie (int $id)
+    public function get (int $id)
     {
         $result = $this->db->getData("SELECT * FROM categorie WHERE id = $id", $this->classe, true);
         if (!$result) {
@@ -47,10 +54,10 @@ class CategorieManager {
             return $e->getMessage();
         } else {
             $content = "<ul>";
-            $content .= "<li><a href='$result->id'>$result->name</a></li>";
+            $content .= "<li><a href='".$result->getId()."'>".$result->getName()."</a></li>";
             $content .= "</ul>";
-            
-            return $content;
+            $this->test();
+            echo $this->upper($content);
         }
     }
 
@@ -59,7 +66,7 @@ class CategorieManager {
      *
      * @return void
      */
-    public function saveCategorie ()
+    public function save ()
     {
         $post = [
             "name" => "catégorie POO"
@@ -76,7 +83,7 @@ class CategorieManager {
      * @param integer $id
      * @return void
      */
-    public function updateCategorie (int $id)
+    public function update (int $id)
     {
         $post = [
             "name" => "catégorie POO mise à jour"
@@ -93,10 +100,16 @@ class CategorieManager {
      * @param integer $id
      * @return void
      */
-    public function deleteCategorie (int $id)
+    public function delete (int $id)
     {
         $statement = "DELETE FROM categorie WHERE id= $id";
 
         $this->db->prepare($statement);
+    }
+
+    public function test()
+    {
+        parent::test();
+        echo "<p>Test de la class</p>";
     }
 }

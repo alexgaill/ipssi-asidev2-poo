@@ -3,8 +3,9 @@ namespace App\Manager;
 
 use App\Entity\Article;
 use Core\Database\Database;
+use Core\Manager\DefaultManager;
 
-class ArticleManager {
+class ArticleManager extends DefaultManager{
 
     private $classe = "Article";
 
@@ -13,7 +14,7 @@ class ArticleManager {
         $this->db = new Database;
     }
 
-    public function getArticles ()
+    public function getAll ()
     {
         $statement = "SELECT * FROM article";
         $articles = $this->db->getData($statement, $this->classe);
@@ -21,7 +22,7 @@ class ArticleManager {
         include ROOT."templates/article/index.php";
     }
 
-    public function getArticle(int $id)
+    public function get(int $id)
     {
         $statement = "SELECT * FROM article WHERE id = $id";
         
@@ -35,7 +36,7 @@ class ArticleManager {
         }
     }
 
-    public function saveArticle ()
+    public function save ()
     {
         $post = [
             "title" => "Lorem Ipseum Dolor Sit Amet",
@@ -59,7 +60,7 @@ class ArticleManager {
         $prep->execute();
     }
 
-    public function updateArticle (int $id)
+    public function update (int $id)
     {
         $post = [
             "title" => "Lorem Ipseum Dolor Sit Amet",
