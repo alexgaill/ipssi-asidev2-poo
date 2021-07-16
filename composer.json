@@ -3,7 +3,11 @@
         "psr-4": {
             "Cours\\": "cours/",
             "Core\\": "Core/",
-            "App\\": "src/"
+            "App\\": "src/",
+            "Exceptions\\": "Exceptions/"
         }
+    },
+    "require": {
+        "phpunit/phpunit": "^9.5"
     }
 }

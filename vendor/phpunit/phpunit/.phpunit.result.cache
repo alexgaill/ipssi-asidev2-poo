@@ -1,0 +1,1 @@
+{"version":1,"defects":{"MathOperationTest::testAdditionWithNumber":4,"MathOperationTest::testAdditionWithLetters":4},"times":{"MathOperationTest::testAdditionWithNumber":0.05,"MathOperationTest::testAdditionWithLetters":0.024}}

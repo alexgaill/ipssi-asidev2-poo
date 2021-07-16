@@ -5,11 +5,12 @@ use App\Service\ChangeText;
 use App\Service\MEPText;
 use Core\Database\Database;
 use Core\Manager\DefaultManager;
+use Cours\Introduction\MathOperation;
 
 /**
  * Class Categorie reprenant tout le CRUD des catégories (Create, Read, Update, Delete)
  */
-class CategorieManager extends DefaultManager{
+final class CategorieManager extends DefaultManager{
 
     use MEPText, ChangeText {
         ChangeText::upper insteadOf MEPText;
@@ -58,6 +59,9 @@ class CategorieManager extends DefaultManager{
             $content .= "</ul>";
             $this->test();
             echo $this->upper($content);
+
+            $math = new MathOperation;
+            $math->additionner();
         }
     }
 
