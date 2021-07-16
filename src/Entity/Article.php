@@ -35,6 +35,31 @@ class Article extends DefaultEntity{
      */
     private $picture;
 
+    // /**
+    //  * On récupère les données d'un formulaire et on construit notre objet
+    //  * C'est le principe de l'hydratation
+    //  *
+    //  * @param array $data
+    //  * @return void
+    //  */
+    // public function hydratee (array $data)
+    // {
+    //     if (isset($data["title"])) {
+    //         $this->setTitle($data["title"]);
+    //     }
+    //     if (isset($data["content"])) {
+    //         $this->setTitle($data["content"]);
+    //     }
+    //     if (isset($data["categorieId"])) {
+    //         $this->setTitle($data["categorieId"]);
+    //     }
+    //     if (isset($data["userId"])) {
+    //         $this->setTitle($data["userId"]);
+    //     }
+    //     if (isset($data["picture"])) {
+    //         $this->setTitle($data["picture"]);
+    //     }
+    // }
 
     /**
      * Get the value of id

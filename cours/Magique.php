@@ -47,18 +47,15 @@ class Magique {
 
     public function __debugInfo()
     {
-        return [
-            $this->prop
-        ];
+        $debug = [];
+        foreach ($this as $prop => $value) {
+            $debug[$prop] = $value;
+        }
+        return $debug;
     }
 
     public function __destruct()
     {
         echo "<h3>Je détruis l'instance</h3>";
     }
-
-    // public static function test ($param = "")
-    // {
-    //     echo "<p> Je suis la méthode test. $param</p>";
-    // }
 }

@@ -8,6 +8,7 @@ class DefaultEntity {
     {
         $this->hydrate($data);
     }
+    
     public function hydrate(array $data)
     {
         foreach ($data as $key => $value) {
