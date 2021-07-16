@@ -19,7 +19,9 @@ class ArticleManager extends DefaultManager{
         $statement = "SELECT * FROM article";
         $articles = $this->db->getData($statement, $this->classe);
 
-        include ROOT."templates/article/index.php";
+        $this->render("article/index", [
+            "articles" => $articles
+        ]);
     }
 
     public function get(int $id)
