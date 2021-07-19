@@ -1,3 +1,4 @@
 RewriteEngine on
 
-RewriteRule ^/?([a-zA-Z]+)$ public/?method=$1 [L]
+RewriteRule ^/?([a-zA-Z]+)$ /?method=$1 [L]
+# RewriteRule ^/?([a-zA-Z]+)$ public/?method=$1 [L]

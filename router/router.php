@@ -2,10 +2,12 @@
 
 use App\Controller\ArticleController;
 use App\Controller\CategorieController;
+use App\Fixtures\UserFixture;
 use Cours\Magique;
 use Cours\CloneWars;
 
 if (!empty($_GET) && isset($_GET["method"])) {
+
     if ($_GET["method"] === "getArticles") {
         $controller = new ArticleController;
         $controller->index();
@@ -15,6 +17,9 @@ if (!empty($_GET) && isset($_GET["method"])) {
     } else if ($_GET["method"] === "saveArticle") {
         $controller = new ArticleController;
         $controller->create($_POST);
+    } else if ($_GET["method"] === "load") {
+        $controller = new UserFixture;
+        $controller->load();
     } 
     // else if ($_GET["method"] === "getCategorie" && isset($_GET["id"])) {
     //     $controller = new CategorieController;

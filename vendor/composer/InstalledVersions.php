@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '8643a7606677ccff1f61f66d15672f023a0a2321',
+    'reference' => '83965c74f99cdde0f2ed68e6ea0dcfe6b498a15c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '8643a7606677ccff1f61f66d15672f023a0a2321',
+      'reference' => '83965c74f99cdde0f2ed68e6ea0dcfe6b498a15c',
     ),
     'doctrine/instantiator' => 
     array (
@@ -54,6 +54,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd56bf6102915de5702778fe20f2de3b2fe570b5b',
+    ),
+    'fakerphp/faker' => 
+    array (
+      'pretty_version' => 'v1.15.0',
+      'version' => '1.15.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '89c6201c74db25fa759ff16e78a4d8f32547770e',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -184,6 +193,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb',
+    ),
+    'psr/container' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8622567409010282b7aeebe4bb841fe98b58dcaf',
     ),
     'sebastian/cli-parser' => 
     array (
@@ -328,6 +346,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'symfony/deprecation-contracts' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5f38c8804a9e97d23e0c8d63341088cd8a22d627',
     ),
     'symfony/polyfill-ctype' => 
     array (

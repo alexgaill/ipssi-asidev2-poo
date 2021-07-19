@@ -8,6 +8,11 @@ class DefaultEntity {
     {
         $this->hydrate($data);
     }
+
+    public function __invoke()
+    {
+        return get_class_methods($this);
+    }
     
     public function hydrate(array $data)
     {

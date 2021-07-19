@@ -58,6 +58,13 @@ class Database {
         return $data;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param string $statement
+     * @param array $data
+     * @return boolean|string
+     */
     public function prepare (string $statement, array $data= array())
     {
         try {
